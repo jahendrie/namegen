@@ -1,0 +1,104 @@
+================================================================================
+    namegen.c   |   version 1.0     |   zlib license    |   2015-02-02
+    James Hendrie                   |   hendrie.james@gmail.com
+================================================================================
+
+    1.  Description
+    2.  Requirements / Restrictions
+    3.  Installation / Uninstallation
+    4.  Usage
+    5.  Examples
+    6.  Links
+
+
+
+----------------------------------------
+    1.  Description
+----------------------------------------
+
+    namegen is a program that generates pseudo-random names according to the
+    arguments given and the files from which it reads.  These files are named
+    'firstnames_male.txt', 'firstnames_female.txt' and 'surnames.txt'
+    respectively, and all are contained within the namegen data directory.  By
+    default this directory is located at /usr/share/namegen/data, though it may
+    be different on your installation.
+
+
+
+----------------------------------------
+    2.  Requirements / Restrictions
+----------------------------------------
+
+    In addition to the aforementioned files, this program uses the following C
+    headers: stdio.h, stdlib.h, string.h, time.h, ctype.h and getopt.h.  If
+    you're able to compile C programs on your system, chances are good that
+    you'll be able to compile this without issues, though if you're having
+    problems feel free to poke around and adjust the headers in the source code.
+
+
+
+----------------------------------------
+    3.  Installation / Uninstallation
+----------------------------------------
+
+    To build, compile the program with 'make'.  It shouldn't take long, though
+    obviously you'll need a C compiler.  If you're on any modern UNIX or Linux
+    distro you should already have one, and if you don't, shame on you.  Go
+    install GCC (gcc.gnu.org) right away.
+
+    After compiling the binary with 'make', install with 'make install' using
+    superuser privileges.
+
+    To uninstall the program, use 'make uninstall' with superuser privileges.
+
+
+----------------------------------------
+    4.  Usage
+----------------------------------------
+
+
+    Usage:  namegen [OPTIONS]
+
+    OPTIONS:
+      -h        Print this help text
+      -V        Print version and author info
+      -n NUM    Print NUM names (default 1)
+      -u        Print names in all upper-case
+      -l        Print names in all lower-case
+      -m        Retrieve only male first names
+      -f        Retrieve only female first names
+      -s        Retrieve only surnames
+      -S        Do not print surnames
+
+
+
+----------------------------------------
+    5.  Examples
+----------------------------------------
+
+namegen
+    Generate one random name, either male or female.
+
+namegen -n 10
+    Generate ten random names, male or female
+
+namegen -f -n10
+    Print ten female names
+
+namegen -umS -n 100
+    Print 100 male first names, all in uppercase letters.
+
+namegen -fln1000
+    Print 1000 female names in all lowercase letters.
+
+
+
+----------------------------------------
+    6.  Links
+----------------------------------------
+
+    Project page:
+        https://github.com/jahendrie/namegen
+
+    Programs page (personal site):
+        http://www.someplacedumb.net/progs
